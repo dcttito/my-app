@@ -1,3 +1,4 @@
+import Link from 'next/link'
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
@@ -49,7 +50,7 @@ const callsToAction = [
   { name: 'Contact Sales', href: '#', icon: PhoneIcon },
 ]
 const company = [
-  { name: 'About', href: '#', icon: InformationCircleIcon },
+  { name: 'About', href: '/about', icon: InformationCircleIcon },
   { name: 'Customers', href: '#', icon: OfficeBuildingIcon },
   { name: 'Press', href: '#', icon: NewspaperIcon },
   { name: 'Careers', href: '#', icon: BriefcaseIcon },

@@ -7,7 +7,7 @@ const { BLOG_URL, CONTENT_API_KEY } = process.env
 
 async function getPost(slug: string) {
 	const res = await fetch(
-		`${BLOG_URL}/ghost/api/v3/content/posts/slug/${slug}?key=${CONTENT_API_KEY}&fields=title,slug,html`
+		`${BLOG_URL}/ghost/api/v3/content/posts/slug/${slug}?key=${CONTENT_API_KEY}&fields=title,slug,html,author`
 	).then((res) => res.json())
 
 	const posts = res.posts
@@ -40,6 +40,8 @@ type Post = {
 	title: string
 	html: string
 	slug: string
+  category: string
+  author: string
 }
 
 const Post: React.FC<{ post: Post }> = (props) => {
@@ -159,7 +161,7 @@ const Post: React.FC<{ post: Post }> = (props) => {
 			</p>
           <h1>
             <span className="block text-base text-center text-indigo-600 font-semibold tracking-wide uppercase">
-              Introducing
+              {post.author}
             </span>
             <span className="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
             {post.title}

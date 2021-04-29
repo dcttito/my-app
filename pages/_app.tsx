@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import { Nav } from "../components"
+import { footer } from "../components"
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import {
@@ -48,14 +49,17 @@ function MyApp({ Component, pageProps }) {
 		<div className="min-h-screen bg-white">
       <header>
 	  <Nav />
+    <footer />
       </header>
 
       <main>
 	  <Component {...pageProps} /> 
         {/* More main page content here... */}
+
+
       </main>
     </div>
-			
+  
 		</div>
 	)
 }
